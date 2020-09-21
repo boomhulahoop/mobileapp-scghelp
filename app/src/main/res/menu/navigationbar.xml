@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/item_home"
+        android:enabled="true"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="หน้าหลัก"/>
+
+    <item
+        android:id="@+id/item_tutorial"
+        android:enabled="true"
+        android:icon="@drawable/ic_book_black_24dp"
+        android:title="คู่มือการใช้"
+        />
+    <item
+        android:id="@+id/item_about"
+        android:enabled="true"
+        android:icon="@drawable/ic_new_releases_black_24dp"
+        android:title="เกี่ยวกับแอพ"/>
+    <item
+        android:id="@+id/item_exit"
+        android:enabled="true"
+        android:icon="@drawable/ic_exit_to_app_black_24dp"
+        android:title="ออกจากระบบ"/>
+
+</menu>

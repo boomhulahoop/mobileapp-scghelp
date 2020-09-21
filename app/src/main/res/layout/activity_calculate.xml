@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".calculate">
+
+
+
+    <android.support.v7.widget.Toolbar xmlns:local="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/mytoolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:elevation="0dp"
+        local:layout_constraintEnd_toEndOf="parent"
+        local:layout_constraintStart_toStartOf="parent"
+        local:layout_constraintTop_toTopOf="parent"
+        local:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
+        local:theme="@style/ThemeOverlay.AppCompat.Dark"/>
+
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mytoolbar">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/constraint"
+            android:layout_width="match_parent"
+            android:layout_height="500dp">
+
+            <ImageView
+                android:id="@+id/boxforphoto"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/box2" />
+            <ImageView
+                android:id="@+id/showbag"
+                android:layout_width="0dp"
+                android:layout_height="219dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/boxforphoto"
+                app:layout_constraintEnd_toEndOf="@+id/boxforphoto"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/boxforphoto"
+                app:layout_constraintTop_toTopOf="@+id/boxforphoto"
+                app:layout_constraintVertical_bias="1.0"
+                app:srcCompat="@drawable/tigerall1" />
+
+            <ImageView
+                android:id="@+id/blockfordetail"
+                android:layout_width="0dp"
+                android:layout_height="800dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/boxforphoto"
+                app:srcCompat="@drawable/box" />
+
+            <TextView
+                android:id="@+id/widthheight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="35dp"
+                android:text="พื้นที่ขนาด :"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toStartOf="@+id/editwidth"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/blockfordetail"
+                app:layout_constraintTop_toTopOf="@+id/blockfordetail" />
+
+            <TextView
+                android:id="@+id/thick"
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:text="ความหนา :"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toStartOf="@+id/editheight"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/blockfordetail"
+                app:layout_constraintTop_toBottomOf="@+id/showarea" />
+
+            <TextView
+                android:id="@+id/calculatecement"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:text="ปริมาณปูนที่ต้องใช้ : "
+                android:textSize="25sp"
+                app:layout_constraintEnd_toStartOf="@+id/thickspinner"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/blockfordetail"
+                app:layout_constraintTop_toBottomOf="@+id/showthick" />
+
+
+            <TextView
+                android:id="@+id/showtotalcalculate"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="150dp"
+                android:background="#61FFFFFF"
+                android:gravity="center"
+                android:text="85sp"
+                android:textColor="#000000"
+                android:textSize="25dp"
+                app:layout_constraintEnd_toEndOf="@+id/blockfordetail"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/blockfordetail"
+                app:layout_constraintTop_toBottomOf="@+id/calculatecement" />
+
+            <Button
+                android:id="@+id/finalcall"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/buttoncal"
+                android:onClick="gofinalcal"
+                android:text="สรุปจำนวนถุงปูน"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bttocal" />
+            <Button
+                android:id="@+id/bttocal"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/buttoncal"
+                android:onClick="gotocal"
+                android:text="คำนวณอีกครั้ง"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rockcal" />
+
+            <Button
+                android:id="@+id/backhome"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/button"
+                android:elevation="20dp"
+                android:onClick="gohome"
+                android:text="กลับสู่หน้าหลัก"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="@+id/blockfordetail"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/blockfordetail"
+                app:layout_constraintTop_toBottomOf="@+id/finalcall" />
+
+            <TextView
+                android:id="@+id/showthick"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="150dp"
+                android:background="#61FFFFFF"
+                android:gravity="center"
+                android:text="TextView"
+                android:textColor="#000000"
+                android:textSize="25dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/thick" />
+
+
+            <TextView
+                android:id="@+id/showarea"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginEnd="150dp"
+                android:background="#61FFFFFF"
+                android:gravity="center"
+                android:text="TextView"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/blockfordetail" />
+
+            <TextView
+                android:id="@+id/unit"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginEnd="8dp"
+                android:gravity="center"
+                android:text="ตร.เมตร"
+                android:textSize="25dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/showarea"
+                app:layout_constraintTop_toTopOf="@+id/blockfordetail" />
+
+            <TextView
+                android:id="@+id/cm."
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginEnd="8dp"
+                android:gravity="center"
+                android:text="เซนติเมตร"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="@+id/blockfordetail"
+                app:layout_constraintStart_toEndOf="@+id/showthick"
+                app:layout_constraintTop_toBottomOf="@+id/unit" />
+
+            <TextView
+                android:id="@+id/bag"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="8dp"
+                android:gravity="center"
+                android:text="ถัง"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/showtotalcalculate"
+                app:layout_constraintTop_toBottomOf="@+id/cm." />
+
+            <TextView
+                android:id="@+id/sandtag"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="8dp"
+                android:text="ปริมาณทราย :"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/showtotalcalculate" />
+
+            <TextView
+                android:id="@+id/sand"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="150dp"
+                android:background="#61FFFFFF"
+                android:gravity="center"
+                android:text="sand"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sandtag" />
+
+            <TextView
+                android:id="@+id/kee"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginEnd="8dp"
+                android:gravity="center"
+                android:text="ถัง"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/sand"
+                app:layout_constraintTop_toBottomOf="@+id/bag" />
+
+            <TextView
+                android:id="@+id/rocktag"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="8dp"
+                android:text="ปริมาณหิน :"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sand" />
+
+            <TextView
+                android:id="@+id/rockcal"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="150dp"
+                android:background="#61FFFFFF"
+                android:gravity="center"
+                android:text="rock"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rocktag" />
+
+            <TextView
+                android:id="@+id/kee2"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="8dp"
+                android:gravity="center"
+                android:text="ถัง"
+                android:textSize="25sp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/rockcal"
+                app:layout_constraintTop_toBottomOf="@+id/kee" />
+
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>
+
+

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".getinput">
+
+    <android.support.v7.widget.Toolbar xmlns:local="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/mytoolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:elevation="0dp"
+        local:layout_constraintEnd_toEndOf="parent"
+        local:layout_constraintStart_toStartOf="parent"
+        local:layout_constraintTop_toTopOf="parent"
+        local:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
+        local:theme="@style/ThemeOverlay.AppCompat.Dark"/>
+
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mytoolbar">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/constraint"
+            android:layout_width="match_parent"
+            android:layout_height="500dp">
+
+
+            <EditText
+                android:id="@+id/editwidth"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_marginStart="200dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
+                android:background="#61FFFFFF"
+                android:ems="2"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:maxLength="5"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="@+id/blockfordetail"
+                app:layout_constraintHorizontal_bias="0.938"
+                app:layout_constraintStart_toStartOf="@+id/blockfordetail"
+                app:layout_constraintTop_toTopOf="@+id/blockfordetail" />
+
+            <EditText
+                android:id="@+id/editheight"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_marginStart="200dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="#61FFFFFF"
+                android:ems="2"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:maxLength="5"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="@+id/blockfordetail"
+                app:layout_constraintHorizontal_bias="0.943"
+                app:layout_constraintStart_toStartOf="@+id/blockfordetail"
+                app:layout_constraintTop_toBottomOf="@+id/editwidth" />
+
+            <Spinner
+                android:id="@+id/thickspinner"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="200dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="5dp"
+                app:layout_constraintEnd_toEndOf="@+id/blockfordetail"
+                app:layout_constraintHorizontal_bias="0.887"
+                app:layout_constraintStart_toStartOf="@+id/blockfordetail"
+                app:layout_constraintTop_toBottomOf="@+id/editheight" />
+
+
+            <ImageView
+                android:id="@+id/showbag"
+                android:layout_width="0dp"
+                android:layout_height="219dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/boxforphoto"
+                app:layout_constraintEnd_toEndOf="@+id/boxforphoto"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/boxforphoto"
+                app:layout_constraintTop_toTopOf="@+id/boxforphoto"
+                app:layout_constraintVertical_bias="1.0"
+                app:srcCompat="@drawable/tigerall1" />
+
+
+            <ImageView
+                android:id="@+id/boxforphoto"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/box2" />
+
+            <ImageView
+                android:id="@+id/blockfordetail"
+                android:layout_width="match_parent"
+                android:layout_height="380dp"
+                android:layout_marginTop="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/showbag"
+                app:srcCompat="@drawable/box" />
+
+            <TextView
+                android:id="@+id/widthheight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="40dp"
+                android:text="ความกว้าง (ม.)"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toStartOf="@+id/editwidth"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/blockfordetail"
+                app:layout_constraintTop_toTopOf="@+id/blockfordetail" />
+
+            <TextView
+                android:id="@+id/thick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="35dp"
+                android:text="ความยาว (ม.)"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toStartOf="@+id/editheight"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/blockfordetail"
+                app:layout_constraintTop_toBottomOf="@+id/widthheight" />
+
+            <TextView
+                android:id="@+id/calculatecement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="40dp"
+                android:text="ความหนา (ซม.)"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toStartOf="@+id/thickspinner"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/blockfordetail"
+                app:layout_constraintTop_toBottomOf="@+id/thick" />
+
+            <Button
+                android:id="@+id/bttocal"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/buttoncal"
+                android:text="คำนวณ"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="@+id/blockfordetail"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/calculatecement" />
+
+            <Button
+                android:id="@+id/backhome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/button"
+                android:elevation="20dp"
+                android:onClick="gohome"
+                android:text="กลับสู่หน้าหลัก"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="@+id/blockfordetail"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/blockfordetail"
+                app:layout_constraintTop_toBottomOf="@+id/bttocal" />
+
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>
